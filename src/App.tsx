@@ -2,7 +2,7 @@ import './App.css';
 import star from '@/assets/images/icon-star.svg';
 import { items } from './utils';
 import { AccordionItem } from './components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface AppState {
 	active: string;
@@ -19,6 +19,21 @@ function App() {
 		}
 	};
 
+	useEffect(() => {
+		const handleEsc = (event: KeyboardEvent) => {
+			if (event.key === 'Escape') {
+				setActive('');
+			}
+		};
+
+		setActive(items.find((item) => item.position === 0)?.id || '');
+		document.addEventListener('keydown', handleEsc);
+
+		return () => {
+			document.removeEventListener('keydown', handleEsc);
+		};
+	}, []);
+
 	return (
 		<main>
 			<div className='background' />
@@ -29,15 +44,17 @@ function App() {
 						<h1>FAQs</h1>
 					</div>
 					<div className='accordion'>
-						{items.map((item) => (
-							<AccordionItem
-								key={item.id}
-								id={item.id}
-								active={active === item.id ? true : false}
-								item={item}
-								handleActive={handleActive}
-							/>
-						))}
+						{items
+							.sort((a, b) => a.position - b.position)
+							.map((item) => (
+								<AccordionItem
+									key={item.id}
+									id={item.id}
+									active={active === item.id ? true : false}
+									item={item}
+									handleActive={handleActive}
+								/>
+							))}
 					</div>
 				</div>
 			</div>
