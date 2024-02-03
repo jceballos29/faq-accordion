@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/jceballos29/faq-accordion](https://github.com/jceballos29/faq-accordion)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://faq-accordion-orpin-nine.vercel.app/](https://faq-accordion-orpin-nine.vercel.app/)
 
 ## My process
 
