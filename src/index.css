@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'WorkSans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Pink: hsl(281, 83%, 54%);
+  --Dark-purple: hsl(292, 42%, 14%);
+
+  font-family: 'WorkSans', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--Dark-purple);
+  background-color: var(--Light-pink);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
